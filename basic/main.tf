@@ -70,7 +70,7 @@ resource "kubernetes_deployment_v1" "app" {
           }
         }
         container {
-          name              = var.app_name
+          name              = format("%s-%s", var.app_name, formatdate("YYMD-HHmm", timestamp()))
           image             = var.app_image
           image_pull_policy = var.app_image_pull_policy
           resources {
