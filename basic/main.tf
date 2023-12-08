@@ -158,7 +158,7 @@ resource "kubernetes_ingress_v1" "app" {
               service {
                 name = var.app_name
                 port {
-                  number = var.app_port
+                  number = 80
                 }
               }
             }
